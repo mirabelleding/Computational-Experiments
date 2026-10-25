@@ -1,3 +1,3 @@
-# Data-ML-Projects
+# Computational Experiments
 
-An archive of some small-scale ML/DL projects developed during my graduate studies.
+A collection of experiments and exploratory studies spanning machine learning, deep learning, data analytics, and statistical modelling, originating from my graduate studies.
