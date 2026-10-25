@@ -1,7 +1,7 @@
-## Monte Carlo Simulation and Optimization for Profit Maximization and Revenue Modeling
+## Monte Carlo Simulation and Optimization
 ### Author: Mirabelle Ding
 
-**Objective**: Develop a comprehensive framework that employs Monte Carlo simulation for modeling uncertain inputs, enhancing profit maximization strategies, and supporting informed decision-making in revenue forecasting.<br />	
+**Objective**: Develop a comprehensive framework that employs Monte Carlo simulation for modeling uncertain inputs, enhancing profit maximization strategies, and supporting informed decision-making in revenue forecasting.<br />
 <br />
 **Methodology**:<br />
 	•	Created a data frame incorporating uncertain inputs with discrete distributions for demand, fixed costs, and variable costs.<br />
@@ -25,7 +25,7 @@ library(nloptr)
 library(extraDistr)
 library(Matrix)
 ```
-### Uncertain Inputs with Discrete Distribution	
+### Uncertain Inputs with Discrete Distribution
 
 |Demand         |Probability|
 |--------------:|----------:|
@@ -91,10 +91,10 @@ resultc <- lapply(production_q, function(q){
 
   cat("Production Quantity:", q, "\n",
   "Mean Net Profit:", mean_profit, "\n",
-  "Standard Deviation of Net Profit:", sd_profit)  
-  
+  "Standard Deviation of Net Profit:", sd_profit)
+
 ggplot(result, aes(x = Net_Profit)) +
-  geom_histogram(binwidth = 100000) 
+  geom_histogram(binwidth = 100000)
 })
 
 
@@ -176,7 +176,7 @@ ggplot(trend_plot_df) +
 pqty_b <- seq(2000,14000,2000)
 
 overlap_dens_plot <- sapply(pqty_b,profit_vec) %>% as.data.frame()
-colnames(overlap_dens_plot) <- paste0("pqty",pqty_b) 
+colnames(overlap_dens_plot) <- paste0("pqty",pqty_b)
 
 overlap_dens_plot <- overlap_dens_plot %>%
   pivot_longer(everything())
@@ -200,7 +200,7 @@ mean_profit <- function(pqty)
 opt_mean<- optimize(f = mean_profit,
          interval = c(2000,15000),
          maximum = T)
-cat("i. Producing",opt_mean$maximum,"will maximize GWS' expected profit, 
+cat("i. Producing",opt_mean$maximum,"will maximize GWS' expected profit,
     which is",opt_mean$objective)
 
 #ii.
@@ -210,7 +210,7 @@ q10_profit <- function(pqty)
 opt_q10<- optimize(f = q10_profit,
                     interval = c(2000,15000),
                     maximum = T)
-cat("\nii. Producing",opt_q10$maximum,"will maximize GWS' 10th percentile profit, 
+cat("\nii. Producing",opt_q10$maximum,"will maximize GWS' 10th percentile profit,
     which is",opt_q10$objective)
 
 #iii
@@ -220,6 +220,6 @@ prob_50m <- function(pqty)
 opt_50m<- optimize(f = prob_50m,
                    interval = c(2000,15000),
                    maximum = T)
-cat("\niii. Producing",round(opt_50m$maximum),"will maximize GWS' probability of earning 
+cat("\niii. Producing",round(opt_50m$maximum),"will maximize GWS' probability of earning
   at least 50 million profit, which is",opt_50m$objective)
 ```
