@@ -14,15 +14,13 @@ The repository explores different computational approaches to prediction, probab
 
 ## Case Studies
 
-A collection of applied studies in data analytics, machine learning, and statistical modelling, organized under [`some_case_studies/`](some_case_studies/).
+A collection of applied studies in machine learning and statistical modelling, organized under [`some_case_studies/`](some_case_studies/).
 
 | Area | Focus |
 |---|---|
-| [Data Analytics](some_case_studies/#data-analytics) | Real estate analytics, clustering, statistical testing, and interactive reporting. |
 | [Machine Learning](some_case_studies/#machine-learning) | Regression, classification, feature engineering, and model evaluation. |
 | [Statistical Modelling](some_case_studies/#statistical-modelling) | Monte Carlo simulation, uncertainty analysis, and revenue optimization. |
 
-Each category links directly to the original notebooks or analytical artifacts, with implementation details and outputs preserved in those files.
 
 ## Related Repositories
 
